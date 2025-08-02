@@ -26,10 +26,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Features', 'Solutions','Pricing', 'Testimonials', 'FAQ'].map((item) => (
+              {['Features', 'Solutions','Pricing', 'Blog', 'Testimonials', 'FAQ'].map((item) => (
                 <li key={item}>
                   <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                    href={item === 'Blog' ? '/blog' : `/#${item.toLowerCase().replace(' ', '-')}`}
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {item}

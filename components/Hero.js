@@ -1,19 +1,75 @@
 const Hero = () => {
   return (
-    <section className="relative pt-20 pb-20 lg:pt-28 lg:pb-28 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6158/person-woman-hand-smartphone.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-10"></div>
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
+        <div className="absolute w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full bottom-0 -right-20 blur-3xl animate-float-delayed"></div>
+        <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
+      </div>
+
+      {/* Optimized Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle gpu-accelerated"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${3 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Simplify Your Fleet Expense Management
+        <div className="grid md:grid-cols-2 gap-16 items-center min-h-screen py-20">
+          <div className="max-w-2xl animate-fade-in-up">
+            <div className="mb-6">
+              <span className="inline-block px-6 py-3 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 backdrop-blur-sm text-indigo-300 rounded-full text-sm font-semibold border border-indigo-500/30 animate-pulse-slow">
+                🚀 Next-Gen Fleet Management
+              </span>
+            </div>
+
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-tight blog-hero-title animate-fade-in-up animation-delay-200" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>
+              Simplify Your
+              <span className="block text-gradient">Fleet Expense</span>
+              <span className="block text-5xl md:text-6xl lg:text-7xl text-gray-200">Management</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-blue-100">
+
+            <p className="text-2xl md:text-3xl mb-10 text-gray-200 leading-relaxed animate-fade-in-up animation-delay-400" style={{ fontFamily: "'SF Pro Text', sans-serif" }}>
               A complete solution to manage and track all your Route Budget including fuel payments, FastTag recharges, servicing costs, and more.
             </p>
-            <div className="mt-8 flex items-center text-sm text-blue-100">
-              <span className="mr-2">★★★★★</span>
-              <span>Trusted by 500+ fleet businesses across the country</span>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 mb-12 animate-fade-in-up animation-delay-600">
+              <button className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-2xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-luxury hover:shadow-luxury-hover transform hover:scale-105 text-lg">
+                <span>Start Free Trial</span>
+                <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+
+              <button className="group inline-flex items-center justify-center px-10 py-5 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-lg">
+                <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Watch Demo</span>
+              </button>
+            </div>
+
+            <div className="flex items-center gap-8 text-gray-300 animate-fade-in-up animation-delay-800">
+              <div className="flex items-center gap-2">
+                <span className="text-yellow-400 text-xl">★★★★★</span>
+                <span className="font-semibold">4.9/5 Rating</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span className="font-semibold">500+ Happy Clients</span>
+              </div>
             </div>
           </div>
 

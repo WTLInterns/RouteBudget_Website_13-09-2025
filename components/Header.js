@@ -25,26 +25,53 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleNavigation = (item) => {
+    if (item === 'Blog') {
+      window.location.href = '/blog';
+    } else {
+      const sectionId = item.toLowerCase();
+      // Check if we're already on the home page
+      if (window.location.pathname === '/') {
+        // We're on home page, just scroll to section
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // We're on another page, navigate to home page with hash
+        window.location.href = `/#${sectionId}`;
+      }
+    }
+    setIsOpen(false);
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
-            <Logo />
-            <span className={`ml-2 font-bold text-xl ${scrolled ? 'text-blue-900' : 'text-white'}`}>Route Budget</span>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-luxury border-b border-gray-200/50' : 'bg-transparent'}`} style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
+        <div className="flex justify-between items-center py-5" suppressHydrationWarning>
+          <div className="flex items-center group" suppressHydrationWarning>
+            <div className="transform group-hover:scale-110 transition-transform duration-300" suppressHydrationWarning>
+              <Logo />
+            </div>
+            <span className={`ml-3 font-black text-2xl tracking-tight transition-all duration-300 ${scrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: "'SF Pro Display', sans-serif" }} suppressHydrationWarning>
+              Route Budget
+            </span>
           </div>
           
-          <nav className="hidden md:flex space-x-8">
-            {['Features', 'Solutions', 'Pricing', 'Testimonials', 'FAQ'].map((item) => (
-              <a
+          <nav className="hidden md:flex space-x-2">
+            {['Features', 'Solutions', 'Pricing', 'Blog', 'Testimonials', 'FAQ'].map((item) => (
+              <button
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`font-medium transition-colors duration-200 ${
-                  scrolled ? 'text-gray-700 hover:text-blue-800' : 'text-white hover:text-blue-200'
+                onClick={() => handleNavigation(item)}
+                className={`font-semibold px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105 ${
+                  scrolled
+                    ? 'text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:shadow-lg'
+                    : 'text-white hover:text-gray-900 hover:bg-white/20 backdrop-blur-sm'
                 }`}
+                style={{ fontFamily: "'SF Pro Text', sans-serif" }}
               >
                 {item}
-              </a>
+              </button>
             ))}
           </nav>
           
@@ -63,15 +90,14 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['Features', 'Solutions', 'Pricing', 'Testimonials', 'FAQ'].map((item) => (
-              <a
+            {['Features', 'Solutions', 'Pricing', 'Blog', 'Testimonials', 'FAQ'].map((item) => (
+              <button
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-800 hover:bg-gray-50 rounded-md"
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleNavigation(item)}
+                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-800 hover:bg-gray-50 rounded-md"
               >
                 {item}
-              </a>
+              </button>
             ))}
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex items-center px-5">

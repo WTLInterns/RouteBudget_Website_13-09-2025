@@ -2,7 +2,7 @@ import { Truck } from 'lucide-react';
 
 const Logo = () => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center" suppressHydrationWarning>
       <Truck className="h-8 w-8" />
     </div>
   );

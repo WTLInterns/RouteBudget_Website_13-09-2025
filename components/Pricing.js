@@ -65,20 +65,31 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative py-24 bg-gradient-to-br from-[#f0f9ff] via-[#e0f7fa] to-[#fff1f2] overflow-hidden">
-      {/* Blobs */}
-      <div className="absolute w-96 h-96 bg-pink-200 rounded-full top-0 -left-20 blur-3xl opacity-20 animate-pulse-slow"></div>
-      <div className="absolute w-96 h-96 bg-blue-200 rounded-full bottom-0 -right-20 blur-3xl opacity-20 animate-pulse-slow"></div>
+    <section id="pricing" className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
+        <div className="absolute w-80 h-80 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full bottom-0 -right-20 blur-3xl animate-float-delayed"></div>
+        <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-200/20 to-purple-200/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
+      </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Route Budget Pricing – Affordable Tracker Software Plans</h2>
-          <p className="text-lg text-gray-700">
+        <div className="text-center max-w-5xl mx-auto mb-20 animate-fade-in-up">
+          <div className="mb-6">
+            <span className="inline-block px-6 py-3 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-semibold border border-indigo-200">
+              💰 Transparent Pricing
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>
+            Affordable Fleet Management
+            <span className="block text-gradient">Plans for Everyone</span>
+          </h2>
+
+          <p className="text-2xl text-gray-600 leading-relaxed" style={{ fontFamily: "'SF Pro Text', sans-serif" }}>
             Explore flexible and budget-friendly plans tailored for every size fleet in India.
-          </p>
-          <p className="mt-2 text-lg text-gray-700">
-            Whether you're a solo driver or manage hundreds, Route Budget has you covered.
+            <span className="block mt-2">Whether you're a solo driver or manage hundreds, Route Budget has you covered.</span>
           </p>
         </div>
 

@@ -35,27 +35,33 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <section id="solutions" className="relative py-24 overflow-hidden bg-gradient-to-br from-[#f8fafc] via-[#e0f7fa] to-[#fce4ec]">
-      {/* Background blobs */}
+    <section id="solutions" className="relative py-32 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gray-50" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-purple-300 opacity-20 rounded-full top-0 left-0 blur-3xl animate-pulse-slow"></div>
-        <div className="absolute w-96 h-96 bg-blue-200 opacity-20 rounded-full bottom-0 right-0 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
+        <div className="absolute w-80 h-80 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full bottom-0 -right-20 blur-3xl animate-float-delayed"></div>
+        <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-200/20 to-purple-200/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-6 animate-fade-up">
-            Route Budget – Complete Cab Expense Management Software in India
+        <div className="text-center max-w-5xl mx-auto mb-20 animate-fade-in-up">
+          <div className="mb-6">
+            <span className="inline-block px-6 py-3 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-semibold border border-indigo-200">
+              🎯 Tailored Solutions
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>
+            Complete Fleet Management
+            <span className="block text-gradient">Solutions for India</span>
           </h2>
-          <p className="text-lg text-gray-700 animate-fade-up delay-100">
-            Discover how Route Budget provides end-to-end solutions for cab and travel
-            businesses to reduce costs and streamline expense tracking in India.
+
+          <p className="text-2xl text-gray-600 leading-relaxed mb-4" style={{ fontFamily: "'SF Pro Text', sans-serif" }}>
+            Discover how Route Budget provides end-to-end solutions for cab and travel businesses to reduce costs and streamline expense tracking across India.
           </p>
-          <p className="mt-6 text-lg text-gray-900 font-bold animate-fade-up delay-200">
-            Route Budget: The All-in-One Expense Management Solution
-          </p>
-          <p className="mt-2 text-lg text-gray-700 animate-fade-up delay-300">
-            Route Budget is not just software; it's your digital accountant optimized for India's unique transportation sector.
+
+          <p className="text-lg text-gray-700 font-semibold">
+            Route Budget: Your Digital Fleet Accountant Optimized for India's Transportation Sector
           </p>
         </div>
 
