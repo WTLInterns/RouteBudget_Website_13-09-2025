@@ -8,17 +8,17 @@ const Hero = () => {
         <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
       </div>
 
-      {/* Optimized Floating Particles */}
+      {/* Ultra-optimized Floating Particles */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle gpu-accelerated"
+            className="absolute w-1 h-1 bg-white/20 rounded-full animate-twinkle gpu-accelerated"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
+              left: `${20 + i * 20}%`,
+              top: `${20 + i * 15}%`,
+              animationDelay: `${i * 2}s`,
+              animationDuration: '6s'
             }}
           />
         ))}

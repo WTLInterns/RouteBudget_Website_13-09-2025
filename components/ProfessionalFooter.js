@@ -87,27 +87,31 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Email Us</p>
-                  <p className="text-gray-400">support@routebudget.com</p>
+                  <p className="text-gray-400">info@webutsav.com</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone size={18} className="text-white" />
                 </div>
                 <div>
                   <p className="text-white font-semibold">Call Us</p>
-                  <p className="text-gray-400">+91 98765 43210</p>
+                  <p className="text-gray-400">+91 8766922792</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin size={18} className="text-white" />
                 </div>
                 <div>
                   <p className="text-white font-semibold">Visit Us</p>
-                  <p className="text-gray-400">Mumbai, Maharashtra, India</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    WebUtsav Pvt. Ltd.<br />
+                    Office No. 016, Wing-A, Downtown Rd,<br />
+                    CityVista, Kharadi, Pune, Maharashtra 411014
+                  </p>
                 </div>
               </div>
             </div>

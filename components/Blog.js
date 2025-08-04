@@ -11,7 +11,7 @@ const blogPosts = [
     excerpt: 'Running a fleet in India is no easy task. Whether you\'re managing cabs in Delhi, transporting goods across Maharashtra, or handling school buses in Bengaluru, you face daily challenges—rising fuel costs, route delays, tolls, fines, and unorganized paperwork.',
     author: 'RouteBudget Team',
     date: 'January 15, 2025',
-    readTime: '8 min read',
+    readTime: '5 min read',
     category: 'Fleet Management',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop&crop=center',
     imageAlt: 'Fleet of vehicles on Indian highway with GPS tracking overlay',
@@ -24,7 +24,7 @@ const blogPosts = [
     excerpt: 'Fleet management software is revolutionizing the way businesses operate, especially in India, where transportation plays a vital role in the economy. Discover the different types and how RouteBudget stands out.',
     author: 'RouteBudget Team',
     date: 'January 10, 2025',
-    readTime: '12 min read',
+    readTime: '6 min read',
     category: 'Software Guide',
     image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=500&fit=crop&crop=center',
     imageAlt: 'Dashboard showing different types of fleet management software interfaces',
@@ -37,7 +37,7 @@ const blogPosts = [
     excerpt: 'In today\'s fast-paced transport industry, managing a fleet efficiently is no longer a task to be handled manually. Explore the complete guide to online fleet management solutions.',
     author: 'RouteBudget Team',
     date: 'January 5, 2025',
-    readTime: '10 min read',
+    readTime: '5 min read',
     category: 'Industry Guide',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=500&fit=crop&crop=center',
     imageAlt: 'Modern truck fleet with digital connectivity and cloud technology',
@@ -50,7 +50,7 @@ const blogPosts = [
     excerpt: 'Managing a fleet of vehicles is no small task, especially in a fast-paced and competitive market like India. Discover why RouteBudget is the best choice for your fleet management needs.',
     author: 'RouteBudget Team',
     date: 'January 1, 2025',
-    readTime: '9 min read',
+    readTime: '6 min read',
     category: 'Product Review',
     image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop&crop=center',
     imageAlt: 'Professional fleet management dashboard showing vehicle tracking and analytics',
@@ -68,23 +68,23 @@ const Blog = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
+        <div className="absolute inset-0 bg-white/50"></div>
         <div className="absolute inset-0">
-          <div className="absolute w-96 h-96 bg-gray-400 opacity-10 rounded-full top-0 -left-24 blur-3xl animate-pulse"></div>
-          <div className="absolute w-96 h-96 bg-gray-500 opacity-10 rounded-full bottom-0 -right-24 blur-3xl animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-gray-200/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
+          <div className="absolute w-96 h-96 bg-gray-300/20 rounded-full bottom-0 -right-24 blur-3xl animate-float-delayed"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 leading-tight tracking-tight blog-hero-title animate-fade-in-up" style={{ fontFamily: "'SF Pro Display', 'Inter', sans-serif" }}>
+          <h1 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight animate-fade-in-up" style={{ fontFamily: "'Inter', 'SF Pro Display', sans-serif" }}>
             Fleet Management
-            <span className="block text-gray-200 text-5xl md:text-7xl">Insights & Guides</span>
+            <span className="block text-gray-700 text-5xl md:text-7xl">Insights & Guides</span>
           </h1>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
             Stay updated with the latest trends, tips, and insights in fleet management.
             Learn how RouteBudget is transforming transportation businesses across India.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-gray-200">
+          <div className="flex flex-wrap justify-center gap-4 text-gray-600">
             <span className="flex items-center gap-2">
               <User size={16} />
               Expert Insights
@@ -103,10 +103,10 @@ const Blog = () => {
 
       {/* Featured Post */}
       {featuredPost && (
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <section className="py-20 bg-white/80 backdrop-blur-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="inline-block px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <span className="inline-block px-6 py-3 bg-gray-900/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
                 ⭐ Featured Article
               </span>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Industry Insights</h2>
@@ -188,7 +188,7 @@ const Blog = () => {
       )}
 
       {/* Blog Posts Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Expert Articles & Guides</h2>

@@ -5,9 +5,8 @@ import { useState } from 'react';
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
+    mobile: '',
     email: '',
-    company: '',
-    fleetSize: '',
     message: ''
   });
 
@@ -18,13 +17,39 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here in a real implementation
-    alert('Thanks for your interest! Our team will contact you shortly.');
+
+    // Basic validation
+    if (!formData.name || !formData.mobile || !formData.email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Create WhatsApp message
+    const message = `Hello! I'm interested in RouteBudget fleet management software.
+
+*Contact Details:*
+Name: ${formData.name}
+Mobile: ${formData.mobile}
+Email: ${formData.email}
+
+*Message:*
+${formData.message || 'I would like to schedule a demo and learn more about your fleet management solutions.'}
+
+Please contact me to schedule a demo. Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    // Reset form
     setFormData({
       name: '',
+      mobile: '',
       email: '',
-      company: '',
-      fleetSize: '',
       message: ''
     });
   };
@@ -38,17 +63,17 @@ const ContactForm = () => {
         <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
       </div>
 
-      {/* Optimized Floating Particles */}
+      {/* Ultra-optimized Floating Particles */}
       <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle gpu-accelerated"
+            className="absolute w-1 h-1 bg-white/20 rounded-full animate-twinkle gpu-accelerated"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
+              left: `${25 + i * 25}%`,
+              top: `${20 + i * 30}%`,
+              animationDelay: `${i * 4}s`,
+              animationDuration: '10s'
             }}
           />
         ))}
@@ -112,29 +137,47 @@ const ContactForm = () => {
             </div>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Request a Demo</h3>
+
+
+          <div className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-luxury animate-fade-in-up animation-delay-800">
+            <h3 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>Request a Demo</h3>
             <form onSubmit={handleSubmit}>
-              <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
-                    placeholder="John Doe"
-                  />
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
+                      Full Name*
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-200 text-white placeholder-gray-300"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="mobile" className="block text-sm font-medium text-gray-200 mb-2">
+                      Mobile Number*
+                    </label>
+                    <input
+                      type="tel"
+                      id="mobile"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-200 text-white placeholder-gray-300"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Business Email*
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
+                    Email Address*
                   </label>
                   <input
                     type="email"
@@ -142,51 +185,14 @@ const ContactForm = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
-                    placeholder="johndoe@company.com"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-200 text-white placeholder-gray-300"
+                    placeholder="your@email.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                    Company Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
-                    placeholder="Acme Transporation Ltd."
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="fleetSize" className="block text-sm font-medium text-gray-700 mb-1">
-                    Fleet Size*
-                  </label>
-                  <select
-                    id="fleetSize"
-                    name="fleetSize"
-                    value={formData.fleetSize}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
-                  >
-                    <option value="">Select your fleet size</option>
-                    <option value="1-10">1-10 vehicles</option>
-                    <option value="11-50">11-50 vehicles</option>
-                    <option value="51-100">51-100 vehicles</option>
-                    <option value="100+">100+ vehicles</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
+                    Message (Optional)
                   </label>
                   <textarea
                     id="message"
@@ -194,17 +200,21 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
-                    placeholder="Tell us about your specific needs..."
-                  ></textarea>
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-200 resize-none text-white placeholder-gray-300"
+                    placeholder="Tell us about your fleet management needs or any specific questions..."
+                  />
                 </div>
-                
+
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white font-medium py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-6 rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-lg"
                 >
-                  Schedule Demo
+                  Schedule Demo via WhatsApp
                 </button>
+
+                <p className="text-center text-gray-300 text-sm mt-4">
+                  Clicking "Schedule Demo" will open WhatsApp with your details pre-filled
+                </p>
               </div>
             </form>
           </div>

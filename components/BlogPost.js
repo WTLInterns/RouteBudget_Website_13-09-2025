@@ -30,27 +30,27 @@ const BlogPost = ({ post }) => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
+        <div className="absolute inset-0 bg-white/70"></div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
-          <div className="absolute w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full bottom-0 -right-20 blur-3xl animate-float-delayed"></div>
-          <div className="absolute w-64 h-64 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
+          <div className="absolute w-96 h-96 bg-gray-200/30 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
+          <div className="absolute w-80 h-80 bg-gray-300/30 rounded-full bottom-0 -right-20 blur-3xl animate-float-delayed"></div>
+          <div className="absolute w-64 h-64 bg-gray-400/20 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse-slow"></div>
         </div>
 
-        {/* Optimized Floating Particles */}
+        {/* Ultra-optimized Floating Particles */}
         <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle gpu-accelerated"
+              className="absolute w-1 h-1 bg-gray-400/20 rounded-full animate-twinkle gpu-accelerated"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                left: `${30 + i * 20}%`,
+                top: `${25 + i * 20}%`,
+                animationDelay: `${i * 3}s`,
+                animationDuration: '8s'
               }}
             />
           ))}
@@ -62,7 +62,7 @@ const BlogPost = ({ post }) => {
             <nav className="mb-8 animate-fade-in-up">
               <a
                 href="/blog"
-                className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-1 group"
+                className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-300 hover:translate-x-1 group"
               >
                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform duration-300" />
                 <span className="font-medium">Back to Blog</span>
@@ -91,12 +91,12 @@ const BlogPost = ({ post }) => {
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight animate-fade-in-up animation-delay-400" style={{ fontFamily: "'SF Pro Display', 'Inter', sans-serif" }}>
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight tracking-tight animate-fade-in-up animation-delay-400" style={{ fontFamily: "'Inter', 'SF Pro Display', sans-serif" }}>
               {post.title}
             </h1>
 
             {/* Excerpt */}
-            <p className="text-2xl text-gray-200 leading-relaxed mb-10 max-w-4xl animate-fade-in-up animation-delay-600" style={{ fontFamily: "'SF Pro Text', 'Inter', sans-serif" }}>
+            <p className="text-2xl text-gray-700 leading-relaxed mb-10 max-w-4xl animate-fade-in-up animation-delay-600" style={{ fontFamily: "'Inter', 'SF Pro Text', sans-serif" }}>
               {post.excerpt}
             </p>
 
@@ -171,7 +171,7 @@ const BlogPost = ({ post }) => {
       </section>
 
       {/* Article Content */}
-      <article className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <article className="py-20 bg-white/90 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             {/* Article Meta Info */}
@@ -217,10 +217,11 @@ const BlogPost = ({ post }) => {
               <div
                 className="text-gray-800 leading-relaxed"
                 style={{
-                  fontFamily: "'SF Pro Text', 'Inter', 'Segoe UI', sans-serif",
-                  fontSize: '20px',
+                  fontFamily: "'Inter', 'SF Pro Text', 'Segoe UI', sans-serif",
+                  fontSize: '18px',
                   lineHeight: '1.8',
-                  letterSpacing: '-0.01em'
+                  letterSpacing: '-0.01em',
+                  fontWeight: '400'
                 }}
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
@@ -281,7 +282,7 @@ const BlogPost = ({ post }) => {
       </article>
 
       {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+      <section className="py-24 bg-gray-50/80 backdrop-blur-sm relative overflow-hidden">
         {/* Background Animation */}
         <div className="absolute inset-0">
           <div className="absolute w-96 h-96 bg-gradient-to-r from-indigo-200/30 to-purple-200/30 rounded-full top-0 -left-48 blur-3xl animate-float"></div>

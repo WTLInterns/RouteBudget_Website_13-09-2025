@@ -4,48 +4,69 @@ import { useEffect } from 'react';
 
 const PerformanceOptimizer = () => {
   useEffect(() => {
-    // Preload critical fonts
-    const preloadFont = (fontUrl) => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'font';
-      link.type = 'font/woff2';
-      link.crossOrigin = 'anonymous';
-      link.href = fontUrl;
-      document.head.appendChild(link);
-    };
+    // Aggressive performance optimizations
+    const optimizePerformance = () => {
+      // Reduce animations on low-end devices
+      if (navigator.hardwareConcurrency <= 4 || navigator.deviceMemory <= 4) {
+        document.documentElement.style.setProperty('--animation-duration', '0.2s');
+        document.documentElement.style.setProperty('--transition-duration', '0.1s');
 
-    // Preload Inter font
-    preloadFont('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2');
+        // Disable complex animations
+        const style = document.createElement('style');
+        style.textContent = `
+          .animate-float, .animate-float-delayed, .animate-twinkle {
+            animation: none !important;
+          }
+          .animate-fade-in-up {
+            animation-duration: 0.2s !important;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      // Remove will-change after animations complete
+      setTimeout(() => {
+        const animatedElements = document.querySelectorAll('[class*="animate-"]');
+        animatedElements.forEach(el => {
+          el.style.willChange = 'auto';
+          el.classList.add('animation-complete');
+        });
+      }, 2000);
+    };
 
     // Optimize images loading
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove('lazy');
-          observer.unobserve(img);
+    const optimizeImages = () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (!img.loading) {
+          img.loading = 'lazy';
         }
+        img.decoding = 'async';
       });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-
-    // Reduce animations on low-end devices
-    const reduceAnimations = () => {
-      if (navigator.hardwareConcurrency <= 2 || navigator.deviceMemory <= 2) {
-        document.documentElement.style.setProperty('--animation-duration', '0.1s');
-        document.documentElement.style.setProperty('--transition-duration', '0.1s');
-      }
     };
 
-    reduceAnimations();
+    // Debounce scroll events
+    let scrollTimeout;
+    const optimizeScrolling = () => {
+      const handleScroll = () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          // Scroll handling logic here
+        }, 16); // ~60fps
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    };
+
+    // Run optimizations
+    optimizePerformance();
+    optimizeImages();
+    const cleanupScroll = optimizeScrolling();
 
     // Cleanup
     return () => {
-      images.forEach(img => imageObserver.unobserve(img));
+      cleanupScroll();
     };
   }, []);
 

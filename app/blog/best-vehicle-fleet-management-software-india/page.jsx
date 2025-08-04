@@ -6,7 +6,7 @@ const postData = {
   excerpt: 'Managing a fleet of vehicles is no small task, especially in a fast-paced and competitive market like India. Discover why RouteBudget is the best choice for your fleet management needs.',
   author: 'RouteBudget Team',
   date: 'January 1, 2025',
-  readTime: '9 min read',
+  readTime: '6 min read',
   category: 'Product Review',
   image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&h=600&fit=crop&crop=center',
   imageAlt: 'Professional fleet management dashboard showing vehicle tracking and analytics',
@@ -209,14 +209,26 @@ const postData = {
         </div>
       </div>
 
-      <div class="bg-blue-600 text-white p-8 rounded-lg text-center mt-12">
-        <h2 class="text-2xl font-bold mb-4">Streamline Your Fleet Management Today</h2>
-        <p class="text-lg mb-6">
-          RouteBudget is more than just fleet management software; it's a solution that can help transform the way you operate your fleet. From real-time vehicle tracking to automated billing and maintenance scheduling, RouteBudget offers everything you need to streamline your operations, reduce costs, and improve efficiency.
-        </p>
-        <p class="text-lg">
-          If you're ready to take your fleet management to the next level, request a free demo today and see how RouteBudget can help your business thrive. Don't let your fleet management be a hassle – let RouteBudget take care of the hard work for you.
-        </p>
+      <div class="cta-section">
+        <div class="cta-hero">
+          <h2 class="cta-title">Streamline Your Fleet Management <span class="highlight">Today</span></h2>
+          <p class="cta-description">RouteBudget is more than just fleet management software; it's a solution that can help transform the way you operate your fleet. From real-time vehicle tracking to automated billing and maintenance scheduling, RouteBudget offers everything you need to streamline your operations, reduce costs, and improve efficiency.</p>
+        </div>
+
+        <div class="conclusion-section">
+          <h3 class="conclusion-title">Conclusion: RouteBudget is the Key to Efficient Fleet Management</h3>
+          <p class="conclusion-text">Whether you're managing 10 or 1000 vehicles, RouteBudget helps you track every rupee, every KM, every day. Ready to modernize your fleet operations? Explore RouteBudget now and experience how this advanced fleet management software can improve your business efficiency and reduce costs.</p>
+        </div>
+
+        <div class="final-cta">
+          <h3 class="final-cta-title">Ready to Transform Your Fleet Operations?</h3>
+          <p class="final-cta-text">If you're ready to take your fleet management to the next level, request a free demo today and see how RouteBudget can help your business thrive. Don't let your fleet management be a hassle – let RouteBudget take care of the hard work for you.</p>
+
+          <div class="cta-buttons">
+            <a href="#contact" class="btn-primary">Get Free Demo</a>
+            <a href="/blog" class="btn-secondary">Read More Articles</a>
+          </div>
+        </div>
       </div>
     </div>
   `
