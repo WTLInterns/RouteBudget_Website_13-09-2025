@@ -1,3 +1,5 @@
+'use client';
+
 import { Check } from 'lucide-react';
 
 const plans = [
@@ -64,6 +66,89 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const handleContactSales = () => {
+    // Create WhatsApp message for contact sales
+    const message = `Hello! I'm interested in discussing RouteBudget fleet management software pricing and solutions.
+
+I would like to speak with your sales team to understand the best plan for my business needs.
+
+Please contact me at your earliest convenience.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
+  const handleGetStarted = () => {
+    // Create WhatsApp message for Starter plan
+    const message = `Hello! I'm interested in the Starter plan (₹299/month) for RouteBudget fleet management software.
+
+This plan is perfect for my individual driver needs with up to 1-3 vehicles. I would like to get started with basic expense tracking and fuel management.
+
+Please help me get started with the Starter plan.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
+  const handleMostPopular = () => {
+    // Create WhatsApp message for Professional plan
+    const message = `Hello! I'm interested in the Professional plan (₹799/month) - your Most Popular plan for RouteBudget fleet management software.
+
+This plan is ideal for my small fleet management needs with 4-15 vehicles. I'm particularly interested in the advanced analytics and approval workflows.
+
+Please help me get started with the Professional plan.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
+  const handleContactSalesEnterprise = () => {
+    // Create WhatsApp message for Enterprise plan
+    const message = `Hello! I'm interested in the Enterprise plan (₹1499/month) for RouteBudget fleet management software.
+
+I manage a large travel agency with 16+ vehicles and need custom expense categories, advanced reporting, and dedicated account management.
+
+Please contact me to discuss the Enterprise plan and custom solutions.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
   return (
     <section id="pricing" className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
       {/* Animated Background Elements */}
@@ -124,7 +209,10 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 mt-auto ${plan.buttonClass}`}>
+                <button 
+                  onClick={plan.name === 'Starter' ? handleGetStarted : plan.name === 'Professional' ? handleMostPopular : handleContactSalesEnterprise}
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 mt-auto hover:scale-105 transform shadow-lg hover:shadow-xl ${plan.buttonClass}`}
+                >
                   {plan.buttonText}
                 </button>
               </div>
@@ -159,7 +247,10 @@ const Pricing = () => {
           </div>
 
           <p className="mt-8 text-gray-600">Need a custom solution? Let's talk.</p>
-          <button className="mt-4 px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300">
+          <button 
+            onClick={handleContactSales}
+            className="mt-4 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
             Contact Our Sales Team
           </button>
         </div>

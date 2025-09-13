@@ -37,6 +37,25 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleContactSupport = () => {
+    // Create WhatsApp message for FAQ support
+    const message = `Hello! I have some questions about RouteBudget fleet management software that weren't covered in your FAQ section.
+
+I would appreciate if you could provide more information and support to help me understand your system better.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   return (
     <section id="faq" className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
 
@@ -96,7 +115,10 @@ const FAQ = () => {
 
         <div className="mt-16 text-center animate-fade-up delay-500">
           <p className="text-gray-700 mb-4">Still have questions?</p>
-          <button className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300">
+          <button
+            onClick={handleContactSupport}
+            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
             Contact Support
           </button>
         </div>

@@ -1,3 +1,5 @@
+'use client';
+
 const testimonials = [
   {
     quote: `Route Budget helped us reduce fuel and maintenance costs by nearly 20%. The reporting 
@@ -23,6 +25,24 @@ place. I get daily updates and alerts.`,
 ];
 
 const Testimonials = () => {
+  const handleContactSupport = () => {
+    // Create WhatsApp message for contact support
+    const message = `Hello! I need support with RouteBudget fleet management software.
+
+Please assist me with my queries and provide the necessary support.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
   return (
     <section id="testimonials" className="py-32 bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white relative overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
       {/* Animated Background Elements */}
@@ -39,10 +59,10 @@ const Testimonials = () => {
             key={i}
             className="absolute w-1 h-1 bg-white/30 rounded-full animate-twinkle"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              left: `${10 + (i * 6.67)}%`,
+              top: `${15 + (i * 5.33)}%`,
+              animationDelay: `${i * 0.2}s`,
+              animationDuration: `${2 + (i % 3)}s`
             }}
           />
         ))}
@@ -67,8 +87,8 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
+          {testimonials.map((testimonial, index) => (       
+            <div     
               key={index}
               className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-luxury hover:shadow-luxury-hover transition-all duration-500 hover:-translate-y-2 group animate-fade-in-up"
               style={{ animationDelay: `${index * 200}ms` }}
@@ -119,8 +139,11 @@ const Testimonials = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="px-8 py-3 bg-white text-blue-900 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300">
-            Read More Success Stories
+          <button 
+            onClick={handleContactSupport}
+            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Contact Support
           </button>
         </div>
       </div>

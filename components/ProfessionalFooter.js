@@ -1,6 +1,26 @@
+'use client';
+
 import { Truck, Mail, Phone, MapPin, Globe, Star, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
+  const handleGetFreeDemo = () => {
+    // Create WhatsApp message for free demo
+    const message = `Hello! I'm interested in getting a free demo of RouteBudget fleet management software.
+
+Please contact me to schedule a demo and learn more about your fleet management solutions.
+
+Thank you!`;
+
+    // WhatsApp number (WebUtsav)
+    const whatsappNumber = '918766922792';
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+  };
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white relative overflow-hidden" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
       {/* Animated Background Elements */}
@@ -118,7 +138,10 @@ const Footer = () => {
             
             {/* CTA Button */}
             <div className="mt-8">
-              <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <button 
+                onClick={handleGetFreeDemo}
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
                 Get Free Demo
               </button>
             </div>
