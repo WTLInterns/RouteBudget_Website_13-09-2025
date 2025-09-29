@@ -225,7 +225,7 @@ const postData = {
           <p class="final-cta-text">If you're ready to take your fleet management to the next level, request a free demo today and see how RouteBudget can help your business thrive. Don't let your fleet management be a hassle – let RouteBudget take care of the hard work for you.</p>
 
           <div class="cta-buttons">
-            <a href="#contact" class="btn-primary">Get Free Demo</a>
+            <a href="/#contact" class="btn-primary">Get Free Demo</a>
             <a href="/blog" class="btn-secondary">Read More Articles</a>
           </div>
         </div>

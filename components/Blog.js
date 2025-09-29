@@ -1,5 +1,3 @@
-'use client';
-
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
@@ -13,7 +11,7 @@ const blogPosts = [
     date: 'January 15, 2025',
     readTime: '5 min read',
     category: 'Fleet Management',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop&crop=center',
+    image: '/images/RouteBudget_New_logo.png', 
     imageAlt: 'Fleet of vehicles on Indian highway with GPS tracking overlay',
     featured: true,
     tags: ['Fleet Management', 'India', 'GPS Tracking', 'Fuel Management']
@@ -26,7 +24,7 @@ const blogPosts = [
     date: 'January 10, 2025',
     readTime: '6 min read',
     category: 'Software Guide',
-    image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=500&fit=crop&crop=center',
+    image: '/images/Logo1.webp',     
     imageAlt: 'Dashboard showing different types of fleet management software interfaces',
     featured: false,
     tags: ['Software Types', 'Comparison', 'Features', 'Technology']
@@ -39,7 +37,7 @@ const blogPosts = [
     date: 'January 5, 2025',
     readTime: '5 min read',
     category: 'Industry Guide',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=500&fit=crop&crop=center',
+    image: '/images/images.jpeg',
     imageAlt: 'Modern truck fleet with digital connectivity and cloud technology',
     featured: false,
     tags: ['Online Software', '2025 Trends', 'Cloud Technology', 'Digital Transformation']
@@ -52,7 +50,7 @@ const blogPosts = [
     date: 'January 1, 2025',
     readTime: '6 min read',
     category: 'Product Review',
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop&crop=center',
+    image: '/images/fleet4.jpeg',
     imageAlt: 'Professional fleet management dashboard showing vehicle tracking and analytics',
     featured: false,
     tags: ['Product Review', 'Best Software', 'Vehicle Management', 'Analytics']
@@ -64,9 +62,15 @@ const Blog = () => {
   const regularPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50" style={{ fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+    <div
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50"
+      style={{
+        fontFamily:
+          "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+      }}
+    >
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
         <div className="absolute inset-0 bg-white/50"></div>
@@ -74,28 +78,37 @@ const Blog = () => {
           <div className="absolute w-96 h-96 bg-gray-200/20 rounded-full top-0 -left-24 blur-3xl animate-float"></div>
           <div className="absolute w-96 h-96 bg-gray-300/20 rounded-full bottom-0 -right-24 blur-3xl animate-float-delayed"></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight animate-fade-in-up" style={{ fontFamily: "'Inter', 'SF Pro Display', sans-serif" }}>
+          <h1
+            className="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight tracking-tight animate-fade-in-up"
+            style={{ fontFamily: "'Inter', 'SF Pro Display', sans-serif" }}
+          >
             Fleet Management
-            <span className="block text-gray-700 text-5xl md:text-7xl">Insights & Guides</span>
+            <span className="block text-gray-700 text-5xl md:text-6xl">
+              Insights & Guides
+            </span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Stay updated with the latest trends, tips, and insights in fleet management.
-            Learn how RouteBudget is transforming transportation businesses across India.
+          <p
+            className="text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Stay updated with the latest trends, tips, and insights in fleet
+            management. Learn how RouteBudget is transforming transportation
+            businesses across India.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-gray-600">
             <span className="flex items-center gap-2">
               <User size={16} />
-              Expert Insights
+              <span>Expert Insights</span>
             </span>
             <span className="flex items-center gap-2">
               <Calendar size={16} />
-              Regular Updates
+              <span>Regular Updates</span>
             </span>
             <span className="flex items-center gap-2">
               <Clock size={16} />
-              Quick Reads
+              <span>Quick Reads</span>
             </span>
           </div>
         </div>
@@ -109,9 +122,12 @@ const Blog = () => {
               <span className="inline-block px-6 py-3 bg-gray-900/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
                 ⭐ Featured Article
               </span>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Industry Insights</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Latest Industry Insights
+              </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Dive deep into the latest trends and expert insights in fleet management technology
+                Dive deep into the latest trends and expert insights in fleet
+                management technology
               </p>
             </div>
 
@@ -135,11 +151,11 @@ const Blog = () => {
                     <div className="flex items-center gap-4 mb-6">
                       <span className="text-gray-500 text-sm flex items-center gap-2">
                         <Calendar size={16} />
-                        {featuredPost.date}
+                        <span>{featuredPost.date}</span>
                       </span>
                       <span className="text-gray-500 text-sm flex items-center gap-2">
                         <Clock size={16} />
-                        {featuredPost.readTime}
+                        <span>{featuredPost.readTime}</span>
                       </span>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
@@ -167,8 +183,12 @@ const Blog = () => {
                           <User size={20} className="text-white" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900 text-lg">{featuredPost.author}</p>
-                          <p className="text-gray-500 text-sm">Fleet Management Expert</p>
+                          <p className="font-semibold text-gray-900 text-lg">
+                            {featuredPost.author}
+                          </p>
+                          <p className="text-gray-500 text-sm">
+                            Fleet Management Expert
+                          </p>
                         </div>
                       </div>
                       <a
@@ -191,9 +211,13 @@ const Blog = () => {
       <section className="py-20 bg-gray-50/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Expert Articles & Guides</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Expert Articles & Guides
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore our comprehensive collection of fleet management guides, industry insights, and expert tips to help you optimize your transportation business.
+              Explore our comprehensive collection of fleet management guides,
+              industry insights, and expert tips to help you optimize your
+              transportation business.
             </p>
           </div>
 
@@ -218,7 +242,7 @@ const Blog = () => {
                   <div className="absolute bottom-4 right-4">
                     <span className="text-white text-xs flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
                       <Clock size={12} />
-                      {post.readTime}
+                      <span>{post.readTime}</span>
                     </span>
                   </div>
                 </div>
@@ -227,7 +251,7 @@ const Blog = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-gray-500 text-sm flex items-center gap-1">
                       <Calendar size={14} />
-                      {post.date}
+                      <span>{post.date}</span>
                     </span>
                   </div>
 
@@ -257,7 +281,9 @@ const Blog = () => {
                         <User size={14} className="text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-gray-900">{post.author}</p>
+                        <p className="text-sm font-semibold text-gray-900">
+                          {post.author}
+                        </p>
                         <p className="text-xs text-gray-500">Expert Author</p>
                       </div>
                     </div>
@@ -275,23 +301,6 @@ const Blog = () => {
             ))}
           </div>
 
-          {/* Newsletter Subscription */}
-          <div className="mt-20 bg-gradient-to-r from-gray-700 to-gray-800 rounded-3xl p-8 md:p-12 text-center text-white">
-            <h3 className="text-3xl font-bold mb-4">Stay Updated with Fleet Management Insights</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Get the latest articles, tips, and industry news delivered to your inbox
-            </p>
-            <div className="max-w-md mx-auto flex gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 

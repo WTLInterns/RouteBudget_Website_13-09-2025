@@ -76,12 +76,12 @@ Thank you!`;
             </span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight blog-hero-title" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>
+          <h2 className="typography-h1 font-black text-white mb-6 tracking-tight blog-hero-title">
             What Our Users Say About
             <span className="block text-gradient">Route Budget</span>
           </h2>
 
-          <p className="text-2xl text-gray-200 leading-relaxed" style={{ fontFamily: "'SF Pro Text', sans-serif" }}>
+          <p className="typography-body-lg text-gray-200 leading-relaxed">
             Hear from real users across India who've streamlined their operations and boosted profitability using Route Budget, the leading fleet expense management software.
           </p>
         </div>
@@ -101,7 +101,7 @@ Thank you!`;
               </div>
 
               {/* Quote */}
-              <p className="text-gray-200 text-lg leading-relaxed mb-8 italic" style={{ fontFamily: "'SF Pro Text', sans-serif" }}>
+              <p className="typography-body text-gray-200 leading-relaxed mb-8 italic">
                 "{testimonial.quote}"
               </p>
 
@@ -118,7 +118,7 @@ Thank you!`;
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-bold text-white text-lg" style={{ fontFamily: "'SF Pro Display', sans-serif" }}>
+                  <h4 className="typography-body font-bold text-white">
                     {testimonial.author}
                   </h4>
                   <p className="text-gray-300 text-sm font-medium">{testimonial.position}</p>

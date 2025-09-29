@@ -52,6 +52,7 @@ const Footer = () => {
                   +91 8766922792
                 </a>
               </li>
+              <br/>
               <li className="flex items-start">
                 <Mail size={20} className="text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
                 <a
@@ -63,7 +64,7 @@ const Footer = () => {
               </li>
             </ul>
 
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h4 className="font-semibold text-lg mb-4">Newsletter</h4>
               <form className="flex">
                 <input
@@ -75,7 +76,7 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -49,7 +49,7 @@ const postData = {
       
       <ul class="list-disc pl-8 space-y-2 text-lg text-gray-700 mb-6">
         <li>Logistics demand has grown due to eCommerce</li>
-        <li>Fuel prices fluctuate almost weekly</li>
+        <li>Fuel s fluctuate almost weekly</li>
         <li>Urban traffic has worsened</li>
         <li>Digital compliance (like FASTag and challans) is now mandatory</li>
       </ul>
